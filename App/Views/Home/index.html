@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+
+{% block title %}Main MVC{% endblock %}
+
+{% block body %}
+ <h1>Welcome</h1>
+ <h3>Don't touch - just copy it to your project</h3>
+ <p>Hello from twig template: {{name}}</p>
+ 
+{% if session.user_id %}{% endif %}<!--opcjonalne ze zm sesyjna -->
+
+ {% if current_user %}
+  USER with ID: {{session.user_id}} is logged in.<br />
+  Name: {{current_user.name}}.<br />
+  mail: {{current_user.email}}.<br /><hr>
+ {% else %}
+  <p>Please log in or register.</p>
+  {% endif %}
+{% endblock %}
+
+{% block tester %}
+	<hr><h2 style="text-align:center">MVC to develop</h2><hr>
+{% endblock %}
+{% block footer %}
+	<hr><h3 style="text-align:center">tutek 46</h3><hr>
+{% endblock %}
